@@ -1,0 +1,299 @@
+E:\reactNavigation>git clone https://github.com/ashish-7711-cse/Coding-Practice
+Cloning into 'Coding-Practice'...
+remote: Enumerating objects: 74, done.
+remote: Counting objects: 100% (74/74), done.
+remote: Compressing objects: 100% (63/63), done.
+remote: Total 74 (delta 11), reused 73 (delta 10), pack-reused 0
+Receiving objects: 100% (74/74), 37.43 KiB | 618.00 KiB/s, done.
+Resolving deltas: 100% (11/11), done.
+
+E:\reactNavigation>git branch branch1
+fatal: not a git repository (or any of the parent directories): .git
+
+E:\reactNavigation>cd coding-practice
+
+E:\reactNavigation\Coding-Practice>git branch
+* master
+
+E:\reactNavigation\Coding-Practice>git branch -b branch1
+error: unknown switch `b'
+usage: git branch [<options>] [-r | -a] [--merged] [--no-merged]
+   or: git branch [<options>] [-l] [-f] <branch-name> [<start-point>]
+   or: git branch [<options>] [-r] (-d | -D) <branch-name>...
+   or: git branch [<options>] (-m | -M) [<old-branch>] <new-branch>
+   or: git branch [<options>] (-c | -C) [<old-branch>] <new-branch>
+   or: git branch [<options>] [-r | -a] [--points-at]
+   or: git branch [<options>] [-r | -a] [--format]
+
+Generic options
+    -v, --verbose         show hash and subject, give twice for upstream branch
+    -q, --quiet           suppress informational messages
+    -t, --track           set up tracking mode (see git-pull(1))
+    -u, --set-upstream-to <upstream>
+                          change the upstream info
+    --unset-upstream      unset the upstream info
+    --color[=<when>]      use colored output
+    -r, --remotes         act on remote-tracking branches
+    --contains <commit>   print only branches that contain the commit
+    --no-contains <commit>
+                          print only branches that don't contain the commit
+    --abbrev[=<n>]        use <n> digits to display object names
+
+Specific git-branch actions:
+    -a, --all             list both remote-tracking and local branches
+    -d, --delete          delete fully merged branch
+    -D                    delete branch (even if not merged)
+    -m, --move            move/rename a branch and its reflog
+    -M                    move/rename a branch, even if target exists
+    -c, --copy            copy a branch and its reflog
+    -C                    copy a branch, even if target exists
+    -l, --list            list branch names
+    --show-current        show current branch name
+    --create-reflog       create the branch's reflog
+    --edit-description    edit the description for the branch
+    -f, --force           force creation, move/rename, deletion
+    --merged <commit>     print only branches that are merged
+    --no-merged <commit>  print only branches that are not merged
+    --column[=<style>]    list branches in columns
+    --sort <key>          field name to sort on
+    --points-at <object>  print only branches of the object
+    -i, --ignore-case     sorting and filtering are case insensitive
+    --format <format>     format to use for the output
+
+
+E:\reactNavigation\Coding-Practice>git branch branch1
+
+E:\reactNavigation\Coding-Practice>git branch branch2
+
+E:\reactNavigation\Coding-Practice>git checkout -b branch1
+fatal: A branch named 'branch1' already exists.
+
+E:\reactNavigation\Coding-Practice>git checkout master
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+
+E:\reactNavigation\Coding-Practice>git checkout branch1
+Switched to branch 'branch1'
+
+E:\reactNavigation\Coding-Practice>git branch
+* branch1
+  branch2
+  master
+
+E:\reactNavigation\Coding-Practice>git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+E:\reactNavigation\Coding-Practice>git checkout branch1
+Switched to branch 'branch1'
+
+E:\reactNavigation\Coding-Practice>git status
+On branch branch1
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ABC.txt.txt
+        PQR.txt.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+E:\reactNavigation\Coding-Practice>git add .
+
+E:\reactNavigation\Coding-Practice>git commit -m "ADDED PQR"
+[branch1 60e0c1a] ADDED PQR
+ 2 files changed, 2 insertions(+)
+ create mode 100644 ABC.txt.txt
+ create mode 100644 PQR.txt.txt
+
+E:\reactNavigation\Coding-Practice>git remote
+origin
+
+E:\reactNavigation\Coding-Practice>git push origin branch1
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 339 bytes | 339.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ashish-7711-cse/Coding-Practice
+ ! [remote rejected] branch1 -> branch1 (permission denied)
+error: failed to push some refs to 'https://github.com/ashish-7711-cse/Coding-Practice'
+
+E:\reactNavigation\Coding-Practice>git status
+On branch branch1
+nothing to commit, working tree clean
+
+E:\reactNavigation\Coding-Practice>git log
+commit 60e0c1ab7ce2c4050a658f4f15271e6b6d87efec (HEAD -> branch1)
+Author: 7711-ashish <ashishamolsutar0302@gmail.com>
+Date:   Sun Feb 20 19:17:33 2022 +0530
+
+    ADDED PQR
+
+commit 2f4c88c4d6450a6f5996a01474f868c2695d2f3b (origin/master, origin/NewCode, origin/HEAD, master, branch2)
+Author: 7711-ashish <ashishamolsutar0302@gmail.com>
+Date:   Wed Jan 5 08:51:17 2022 +0530
+
+    NewCode Branch Commit
+
+commit c7a8cfc5b25d8624f7ed9bf140ee6cb3e88608b7
+Author: 7711-ashish <ashishamolsutar0302@gmail.com>
+Date:   Sun Jan 2 10:54:34 2022 +0530
+
+    NewCode branch added Files
+
+commit bb5879c2110234c3ce44b868adaa98d9ff9051fe
+Author: 7711-ashish <ashishamolsutar0302@gmail.com>
+Date:   Sun Jan 2 10:09:46 2022 +0530
+
+    First Commit
+
+E:\reactNavigation\Coding-Practice>git branch
+* branch1
+  branch2
+  master
+
+E:\reactNavigation\Coding-Practice>cd..
+
+E:\reactNavigation>git clone https://github.com/7711-ashish/javacodes
+Cloning into 'javacodes'...
+remote: Enumerating objects: 355, done.
+remote: Counting objects: 100% (355/355), done.
+remote: Compressing objects: 100% (282/282), done.
+fetch-pack: unexpected disconnect while reading sideband packet
+
+E:\reactNavigation>git
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+
+E:\reactNavigation>
+
+E:\reactNavigation>git clone https://github.com/7711-ashish/javacodes
+Cloning into 'javacodes'...
+remote: Enumerating objects: 355, done.
+remote: Counting objects: 100% (355/355), done.
+remote: Compressing objects: 100% (282/282), done.
+remote: Total 355 (delta 71), reused 340 (delta 66), pack-reused 0
+Receiving objects: 100% (355/355), 9.34 MiB | 1.31 MiB/s, done.
+Resolving deltas: 100% (71/71), done.
+
+E:\reactNavigation>cd javacodes
+
+E:\reactNavigation\javacodes>git branch
+* master
+
+E:\reactNavigation\javacodes>git branch branch1
+
+E:\reactNavigation\javacodes>git checkout branch1
+Switched to branch 'branch1'
+
+E:\reactNavigation\javacodes>git add -A
+
+E:\reactNavigation\javacodes>git commit -m "PQR ADDED"
+[branch1 9110b62] PQR ADDED
+ 1 file changed, 1 insertion(+)
+ create mode 100644 PQR.txt
+
+E:\reactNavigation\javacodes>git status
+On branch branch1
+nothing to commit, working tree clean
+
+E:\reactNavigation\javacodes>git push -u origin branch1
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 284 bytes | 284.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'branch1' on GitHub by visiting:
+remote:      https://github.com/7711-ashish/javacodes/pull/new/branch1
+remote:
+To https://github.com/7711-ashish/javacodes
+ * [new branch]      branch1 -> branch1
+Branch 'branch1' set up to track remote branch 'branch1' from 'origin'.
+
+E:\reactNavigation\javacodes>git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+E:\reactNavigation\javacodes>git add -A
+
+E:\reactNavigation\javacodes>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   ASHISH.txt
+
+
+E:\reactNavigation\javacodes>git branch branch2
+
+E:\reactNavigation\javacodes>git add -A
+
+E:\reactNavigation\javacodes>git commit -m "ABC ADDED"
+[master a7a2985] ABC ADDED
+ 1 file changed, 2 insertions(+)
+ create mode 100644 ASHISH.txt
+
+E:\reactNavigation\javacodes>git push -u origin master
+
+E:\reactNavigation\javacodes>
+E:\reactNavigation\javacodes>
+E:\reactNavigation\javacodes>
+E:\reactNavigation\javacodes>git push -u origin branch2
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'branch2' on GitHub by visiting:
+remote:      https://github.com/7711-ashish/javacodes/pull/new/branch2
+remote:
+To https://github.com/7711-ashish/javacodes
+ * [new branch]      branch2 -> branch2
+Branch 'branch2' set up to track remote branch 'branch2' from 'origin'.
+
+E:\reactNavigation\javacodes>
